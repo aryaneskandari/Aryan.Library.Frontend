@@ -29,9 +29,5 @@ export class LibrarianLoginComponent {
     username: [null, [Validators.required,Validators.email]],
     password: [null, Validators.required],
   });
-
-
-  onSubmit(): void {
-    alert('Thanks!');
-  }
+  
 }
