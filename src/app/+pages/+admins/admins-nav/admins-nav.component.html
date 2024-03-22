@@ -5,9 +5,14 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Admins</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="home">
+        <mat-icon matListItemIcon >home</mat-icon>
+        Home
+      </a>
+      <a mat-list-item routerLink="librarians">
+        <mat-icon matListItemIcon >library_add</mat-icon>
+        Librarians
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

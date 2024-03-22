@@ -11,22 +11,29 @@ import { LibrariansHomeComponent } from './+pages/+librarians/librarians-home/li
 import { LibrariansBooksComponent } from './+pages/+librarians/librarians-books/librarians-books.component';
 import { LibrariansBorrowsComponent } from './+pages/+librarians/librarians-borrows/librarians-borrows.component';
 import { LibrariansMembersComponent } from './+pages/+librarians/librarians-members/librarians-members.component';
+import { AdminLoginComponent } from './+pages/+public/admin-login/admin-login.component';
+import { LibrarianLoginComponent } from './+pages/+public/librarian-login/librarian-login.component';
 
 export const routes: Routes = [
   {path:'public',component:PublicNavComponent,children:[
     {path:'home',component:PublicHomeComponent},
     {path:'books',component:PublicBooksComponent},
     {path:'members',component:PublicMembersComponent},
+    {path:'adminlogin',component:AdminLoginComponent},
+    {path:'librarianlogin',component:LibrarianLoginComponent},
+    {path:'',redirectTo:'home',pathMatch:'prefix'},
   ]},
   {path:'admins',component:AdminsNavComponent,children:[
     {path:'home',component:AdminsHomeComponent},
-    {path:'librarians',component:AdminsLibrariansComponent}
+    {path:'librarians',component:AdminsLibrariansComponent},
+    {path:'',redirectTo:'home',pathMatch:'prefix' }
   ]},
   {path:'librarians',component:LibrariansNavComponent,children:[
     {path:'home',component:LibrariansHomeComponent},
     {path:'books',component:LibrariansBooksComponent},
     {path:'borrows',component:LibrariansBorrowsComponent},
-    {path:'members',component:LibrariansMembersComponent}
+    {path:'members',component:LibrariansMembersComponent},
+    {path:'',redirectTo:'home',pathMatch:'prefix'}
   ]},
   {path:'',redirectTo:'/public',pathMatch:'full'},
   {path:'**',redirectTo:'/public'}

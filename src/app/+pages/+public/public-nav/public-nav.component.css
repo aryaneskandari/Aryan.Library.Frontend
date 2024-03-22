@@ -9,7 +9,10 @@
 .sidenav .mat-toolbar {
   background: inherit;
 }
-
+.mt{
+  background-color: rgb(19, 2, 252) !important;
+  color: white;
+}
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
