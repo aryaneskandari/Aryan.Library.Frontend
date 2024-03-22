@@ -2,12 +2,14 @@ import { Component, OnInit, inject } from '@angular/core';
 import { BookService } from '../../../+services/book.service';
 import { Book } from '../../../+models/Book';
 import { MatTableModule } from'@angular/material/table';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @Component({
   selector: 'app-librarians-books',
   standalone: true,
   imports: [
-    MatTableModule
+    MatTableModule,
+    BookDetailsComponent
   ],
   templateUrl: './librarians-books.component.html',
   styleUrl: './librarians-books.component.css'
