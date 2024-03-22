@@ -4,4 +4,13 @@
 @tailwind utilities;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;  }
+
+@font-face {
+  font-family:'PeydaExtraLight' ;
+  src: url(./assets/fonts/PeydaWebFaNum-ExtraLight.woff);
+}
+@font-face {
+  font-family: 'PeydaExtraBold';
+  src: url(./assets/fonts/PeydaWebFaNum-Bold.woff);
+}

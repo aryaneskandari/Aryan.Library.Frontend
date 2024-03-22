@@ -9,7 +9,7 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     MatTableModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './public-books.component.html',
   styleUrl: './public-books.component.css'

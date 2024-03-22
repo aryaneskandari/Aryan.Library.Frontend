@@ -2,54 +2,51 @@
   <app-book-details />
 }
 @if (currentAction=='list') {
-  <div class="">
-    <button  (click)="addData()" class="ml-2 bg-blue-500 px-3 py-1 text-white rounded-md   ">
+  <div class="font-table ">
+    <button  (click)="addData()" class="ml-2 bg-blue-500 px-3 py-1 text-white rounded-md hover:bg-blue-900 hover:transition-all ease-in-out delay-75 ">
       <mat-icon class="align-bottom ">add</mat-icon>
       افزودن
     </button>
     <button
         (click)="removeData()"
-        class="ml-2 bg-red-500 px-3 py-1 text-white rounded-md ">
+        class="ml-2 bg-red-500 px-3 py-1 text-white rounded-md hover:bg-red-900 hover:transition-all ease-in-out delay-75">
       <mat-icon class="align-bottom ">remove</mat-icon>
       حذف
     </button>
     <button
     (click)="editData()"
-    class="bg-green-500 px-3 py-1 text-white rounded-md ">
+    class="bg-green-500 px-3 py-1 text-white rounded-md hover:bg-green-900 hover:transition-all ease-in-out delay-75 ">
   <mat-icon class="align-bottom ">edit</mat-icon>
   ویرایش
-</button>
+  </button>
   </div>
   <div class="overflow-x-auto w-full ">
     <table mat-table [dataSource]="data" class="mat-elevation-z8 mt-5 ">
-      <!-- Implicit Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> شناسه </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+
+      <ng-container matColumnDef="id" >
+        <th mat-header-cell *matHeaderCellDef class="font-table_th "> شناسه </th>
+        <td mat-cell *matCellDef="let element" class="font-table"> {{element.id}} </td>
       </ng-container>
 
-      <!-- Index Column -->
-      <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef> عنوان </th>
-        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      <ng-container matColumnDef="title" >
+        <th mat-header-cell *matHeaderCellDef class="font-table_th "> عنوان </th>
+        <td mat-cell *matCellDef="let element" class="font-table"> {{element.title}} </td>
       </ng-container>
 
-      <!-- Count Column -->
+
     <ng-container matColumnDef="writer">
-      <th mat-header-cell *matHeaderCellDef> نویسنده </th>
-      <td mat-cell *matCellDef="let element"> {{element.writer}} </td>
+      <th mat-header-cell *matHeaderCellDef class="font-table_th "> نویسنده </th>
+      <td mat-cell *matCellDef="let element" class="font-table"> {{element.writer}} </td>
     </ng-container>
 
-    <!-- First Column -->
     <ng-container matColumnDef="publisher">
-      <th mat-header-cell *matHeaderCellDef> ناشر </th>
-      <td mat-cell *matCellDef="let element"> {{element.publisher}} </td>
+      <th mat-header-cell *matHeaderCellDef class="font-table_th "> ناشر </th>
+      <td mat-cell *matCellDef="let element" class="font-table"> {{element.publisher}} </td>
     </ng-container>
 
-    <!-- Last Column -->
     <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef> قیمت </th>
-      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      <th mat-header-cell *matHeaderCellDef class="font-table_th "> قیمت </th>
+      <td mat-cell *matCellDef="let element" class="font-table  "> {{element.price}} </td>
     </ng-container>
 
 

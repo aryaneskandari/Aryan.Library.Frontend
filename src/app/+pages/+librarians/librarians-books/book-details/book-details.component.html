@@ -1,57 +1,67 @@
-<form [formGroup]="bookForm" novalidate >
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>جزییات کتاب </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="شناسه" formControlName="id">
-          </mat-form-field>
+<section class="grid grid-cols-1 w-[20rem] mx-auto ">
+  <form [formGroup]="bookForm" novalidate >
+    <mat-card class="shipping-card">
+      <mat-card-header class="justify-center  text-gray-500 bg-purple-100 mb-5  ">
+        <mat-card-title >جزییات کتاب </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width " >
+              <input matInput placeholder="شناسه" formControlName="id" class="placeholder:font-table">
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="عنوان" formControlName="title">
-            @if (bookForm.controls['title'].hasError('required')) {
-              <mat-error>عنوان <strong>الزامیست</strong></mat-error>
-            }
-          </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="عنوان" formControlName="title" class="placeholder:font-table">
+              @if (bookForm.controls['title'].hasError('required')) {
+                <mat-error class="font-table_th">عنوان <strong>الزامیست</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="نویسنده" formControlName="writer">
-            @if (bookForm.controls['writer'].hasError('required')) {
-              <mat-error>نویسنده <strong>الزامیست</strong></mat-error>
-            }
-          </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="نویسنده" formControlName="writer" class="font-table placeholder:font-table">
+              @if (bookForm.controls['writer'].hasError('required')) {
+                <mat-error class="font-table_th">نویسنده <strong>الزامیست</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="ناشر" formControlName="publisher">
-            @if (bookForm.controls['publisher'].hasError('required')) {
-              <mat-error>ناشر <strong>required</strong></mat-error>
-            }
-          </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="ناشر" formControlName="publisher" class="placeholder:font-table">
+              @if (bookForm.controls['publisher'].hasError('required')) {
+                <mat-error class="font-table_th">ناشر <strong>الزامیست</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput maxlength="5" placeholder="قیمت" type="number" formControlName="price">
-            <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
-          </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput minlength="5" placeholder="قیمت" type="number" formControlName="price" class="placeholder:font-table">
+              <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+      </mat-card-content>
+      <mat-card-actions class="mx-2 flex justify-center gap-2  ">
+        <button  class=" w-44 bg-blue-600 p-2 rounded-md text-white shadow-md hover:bg-blue-800 disabled:bg-gray-400  " [disabled]="!bookForm.valid"  type="submit">
+          <mat-icon class="align-bottom ">save</mat-icon>
+          ثبت
+        </button>
+
+        <button  class=" bg-orange-600 p-2  rounded-md text-white shadow-md hover:bg-orange-800 disabled:bg-gray-400  " >
+          بازگشت
+          <mat-icon class="align-bottom">arrow_back</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</section>

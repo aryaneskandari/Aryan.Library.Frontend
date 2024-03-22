@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -19,7 +20,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ]
 })
 export class BookDetailsComponent {
@@ -28,8 +30,8 @@ export class BookDetailsComponent {
     id: [null],
     title: [null, Validators.required],
     writer: [null, Validators.required],
-    publisher: null,
-    price: [null, Validators.required],
+    publisher: [null,Validators.required],
+    price: [null, [Validators.required,Validators.minLength(0)]],
   });
 
   onSubmit(): void {
