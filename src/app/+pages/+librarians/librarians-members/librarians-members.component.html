@@ -1,11 +1,34 @@
-<p>librarians-members works!</p>
+@if (currentAction!='list') {
+  <app-member-details/>
+}
 
-<div class="overflow-x-auto w-full ">
-  <table mat-table [dataSource]="data" class="mat-elevation-z8 mt-5 ">
+@if (currentAction=='list') {
+
+  <div class="font-table ">
+    <button  (click)="addData()" class="ml-2 bg-blue-500 px-3 py-1 text-white rounded-md hover:bg-blue-900 hover:transition-all ease-in-out delay-75 ">
+      <mat-icon class="align-bottom ">add</mat-icon>
+      افزودن
+    </button>
+    <button
+        (click)="removeData()"
+        class="ml-2 bg-red-500 px-3 py-1 text-white rounded-md hover:bg-red-900 hover:transition-all ease-in-out delay-75">
+      <mat-icon class="align-bottom ">clear</mat-icon>
+      حذف
+    </button>
+    <button
+    (click)="editData()"
+    class="bg-green-500 px-3 py-1 text-white rounded-md hover:bg-green-900 hover:transition-all ease-in-out delay-75 ">
+  <mat-icon class="align-bottom ">edit</mat-icon>
+  ویرایش
+  </button>
+  </div>
+
+  <div class="overflow-x-auto w-full ">
+    <table mat-table [dataSource]="data" class="mat-elevation-z8 mt-5 ">
 
 
-    <ng-container matColumnDef="id" >
-      <th mat-header-cell *matHeaderCellDef class="font-table_th "> شناسه </th>
+      <ng-container matColumnDef="id" >
+        <th mat-header-cell *matHeaderCellDef class="font-table_th "> شناسه </th>
       <td mat-cell *matCellDef="let element" class="font-table"> {{element.id}} </td>
     </ng-container>
 
@@ -22,8 +45,8 @@
     <th mat-header-cell *matHeaderCellDef class="font-table_th ">
       <mat-icon class="align-bottom ">info</mat-icon>
 
-       نام و نام خانوادگی
-      </th>
+      نام و نام خانوادگی
+    </th>
     <td mat-cell *matCellDef="let element" class="font-table"> {{element.fullname | titlecase}} </td>
   </ng-container>
 
@@ -50,8 +73,8 @@
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef class="font-table_th ">
       <mat-icon class="align-bottom "> email</mat-icon>
-       ایمیل
-      </th>
+      ایمیل
+    </th>
     <td mat-cell *matCellDef="let element" >
       <span class=" font-table  ">
         {{element.email | titlecase}}
@@ -74,4 +97,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-</table>
+   </table>
+  </div>
+}

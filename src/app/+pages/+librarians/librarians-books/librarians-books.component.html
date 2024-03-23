@@ -22,31 +22,46 @@
   </div>
   <div class="overflow-x-auto w-full ">
     <table mat-table [dataSource]="data" class="mat-elevation-z8 mt-5 ">
-      
+
 
       <ng-container matColumnDef="id" >
-        <th mat-header-cell *matHeaderCellDef class="font-table_th "> شناسه </th>
+        <th mat-header-cell *matHeaderCellDef class="font-table_th ">
+          <mat-icon class="align-bottom ">perm_identity</mat-icon>
+          شناسه
+        </th>
         <td mat-cell *matCellDef="let element" class="font-table"> {{element.id}} </td>
       </ng-container>
 
       <ng-container matColumnDef="title" >
-        <th mat-header-cell *matHeaderCellDef class="font-table_th "> عنوان </th>
+        <th mat-header-cell *matHeaderCellDef class="font-table_th ">
+          <mat-icon class="align-bottom "> title</mat-icon>
+          عنوان
+        </th>
         <td mat-cell *matCellDef="let element" class="font-table"> {{element.title}} </td>
       </ng-container>
 
 
     <ng-container matColumnDef="writer">
-      <th mat-header-cell *matHeaderCellDef class="font-table_th "> نویسنده </th>
+      <th mat-header-cell *matHeaderCellDef class="font-table_th ">
+        <mat-icon class="align-bottom "> notes</mat-icon>
+         نویسنده
+        </th>
       <td mat-cell *matCellDef="let element" class="font-table"> {{element.writer}} </td>
     </ng-container>
 
     <ng-container matColumnDef="publisher">
-      <th mat-header-cell *matHeaderCellDef class="font-table_th "> ناشر </th>
+      <th mat-header-cell *matHeaderCellDef class="font-table_th ">
+        <mat-icon class="align-bottom "> business</mat-icon>
+         ناشر
+        </th>
       <td mat-cell *matCellDef="let element" class="font-table"> {{element.publisher}} </td>
     </ng-container>
 
     <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef class="font-table_th "> قیمت </th>
+      <th mat-header-cell *matHeaderCellDef class="font-table_th ">
+        <mat-icon class="align-bottom ">payment</mat-icon>
+         قیمت
+        </th>
       <td mat-cell *matCellDef="let element" >
         <span class=" font-table border border-green-500  w-10 h-10 py-1 px-5 rounded-sm hover:bg-green-500 hover:text-white   ">
           {{element.price}}

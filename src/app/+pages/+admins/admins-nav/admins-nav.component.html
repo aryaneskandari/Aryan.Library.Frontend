@@ -3,15 +3,21 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Admins</mat-toolbar>
+      <mat-toolbar class="w-full text-center flex justify-center ">
+        <span class="mt-2 flex justify-center items-center text-center font-table_th ">پنل مدیریت</span>
+      </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="home">
-        <mat-icon matListItemIcon >home</mat-icon>
-        Home
+      <a mat-list-item routerLink="home"  class="  hover:bg-blue-200  " >
+        <mat-icon  matListItemIcon >home</mat-icon>
+        <span class="font-table_th text-gray-500 ">
+          صفحه اصلی
+        </span>
       </a>
-      <a mat-list-item routerLink="librarians">
-        <mat-icon matListItemIcon >library_add</mat-icon>
-        Librarians
+      <a mat-list-item routerLink="librarians"  class="  hover:bg-blue-200  " >
+        <mat-icon  matListItemIcon >home</mat-icon>
+        <span class="font-table_th text-gray-500 ">
+           کتابداران
+        </span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -26,7 +32,7 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       }
-      <span>ProjectOne</span>
+      <span class="font-table_th "> مدیریت کل </span>
     </mat-toolbar>
     <router-outlet/>
   </mat-sidenav-content>

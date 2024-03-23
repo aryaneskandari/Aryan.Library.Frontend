@@ -1,0 +1,80 @@
+<section class="grid grid-cols-1 w-[20rem] mx-auto ">
+
+  <form [formGroup]="memberForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header class="justify-center  text-gray-500 bg-purple-100 mb-5  ">
+      <mat-card-title >اعضای کتابخونه </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="شناسه" formControlName="id" class="placeholder:font-table">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="نام و نام خانوادگی" formControlName="fullname" class="placeholder:font-table">
+            @if (memberForm.controls['fullname'].hasError('required')) {
+              <mat-error>First name is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input  matInput placeholder="جنسیت" formControlName="gender" class="placeholder:font-table">
+            @if (memberForm.controls['gender'].hasError('required')) {
+              <mat-error>Address is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="تلفن" formControlName="phoneNumber" class="placeholder:font-table">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="ایمیل" formControlName="email" class="placeholder:font-table">
+            @if (memberForm.controls['email'].hasError('required')) {
+              <mat-error>City is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="آدرس" formControlName="address" class="placeholder:font-table">
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions class="mx-2 flex justify-center gap-2  ">
+      <button  class=" w-44 bg-blue-600 p-2 rounded-md text-white shadow-md hover:bg-blue-800 disabled:bg-gray-400  " [disabled]="!memberForm.valid"  type="submit">
+        <mat-icon class="align-bottom ">save</mat-icon>
+        ثبت
+      </button>
+
+      <button  class=" bg-orange-600 p-2  rounded-md text-white shadow-md hover:bg-orange-800 disabled:bg-gray-400  " >
+        بازگشت
+        <mat-icon class="align-bottom">arrow_back</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+</section>

@@ -27,6 +27,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   ]
 })
 export class LibrariansNavComponent {
+  
+signout() {
+
+}
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -34,4 +38,6 @@ export class LibrariansNavComponent {
       map(result => result.matches),
       shareReplay()
     );
+
+
 }

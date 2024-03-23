@@ -4,7 +4,7 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar class="w-full text-center flex justify-center ">
-      <span class="mt-2 flex justify-center items-center text-center ">Public</span>
+      <span class="mt-2 flex justify-center items-center text-center font-table_th ">بخش عمومی </span>
     </mat-toolbar>
     <mat-nav-list >
       <a mat-list-item routerLink="home" class="hover:bg-blue-200  " >
@@ -34,7 +34,7 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       }
-      <span>ProjectOne</span>
+      <span class="font-table_th ">پلتفرم کتابداری آنیا</span>
     </mat-toolbar>
     <router-outlet/>
   </mat-sidenav-content>
