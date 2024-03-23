@@ -10,7 +10,7 @@
     <button
         (click)="removeData()"
         class="ml-2 bg-red-500 px-3 py-1 text-white rounded-md hover:bg-red-900 hover:transition-all ease-in-out delay-75">
-      <mat-icon class="align-bottom ">remove</mat-icon>
+      <mat-icon class="align-bottom ">clear</mat-icon>
       حذف
     </button>
     <button
@@ -22,6 +22,7 @@
   </div>
   <div class="overflow-x-auto w-full ">
     <table mat-table [dataSource]="data" class="mat-elevation-z8 mt-5 ">
+      
 
       <ng-container matColumnDef="id" >
         <th mat-header-cell *matHeaderCellDef class="font-table_th "> شناسه </th>
